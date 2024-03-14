@@ -21,7 +21,7 @@ public class Prompt
         string thePrompt = _prompts[randomIndex];
         Entry prompt = new Entry();
         prompt._promptText = thePrompt;
-        //Console.WriteLine(thePrompt);
+        Console.WriteLine(thePrompt);
         return thePrompt;
     }
 }

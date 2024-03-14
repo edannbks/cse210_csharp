@@ -14,9 +14,9 @@ public class Journal
         Console.WriteLine("Please respond to the following prompt:");
         
         Prompt getPrompt = new Prompt();
-        getPrompt.GetRandomPrompt();
-
+        string prompt = getPrompt.GetRandomPrompt();
         Entry newEntry = new Entry();
+        newEntry._promptText = prompt;
         newEntry._entryText = Console.ReadLine();
         newEntry._date = today;
         _entries.Add(newEntry);
@@ -39,7 +39,7 @@ public class Journal
         {
             foreach (Entry entry in _entries)
             {
-                outputFile.WriteLine(_entries);
+                outputFile.WriteLine($"{entry._promptText} {entry._date} {entry._entryText}");
             }
         }
     }

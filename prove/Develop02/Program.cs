@@ -27,7 +27,7 @@ class Program
                 {
                     Console.Clear();
                     myJournal.AddEntry();
-                    myJournal._entries.Add(theEntry);
+              //      myJournal._entries.Add(theEntry);
                 }
             else if (choice == 2)
                 {
