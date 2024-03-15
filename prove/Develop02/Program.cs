@@ -11,6 +11,7 @@ class Program
         int choice = 0;
         while (choice != 5)
             {
+                Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");                
                 Console.WriteLine("Welcome to Your Journal!");
                 Console.WriteLine("Please enter the number of your menu selection.");
                 Console.WriteLine("1- Add a new entry.");

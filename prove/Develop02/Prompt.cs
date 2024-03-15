@@ -12,7 +12,7 @@ public class Prompt
         "What made me feel happy today?",
         "What was the greatest challenge I faced today?",
         "What is one thing I can do this week to serve someone else?",
-        "What ia something new I have learned this week?"
+        "What is something new I have learned this week?"
     };
     public string GetRandomPrompt()
     {

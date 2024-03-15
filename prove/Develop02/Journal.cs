@@ -1,6 +1,7 @@
 using System;
 using System.Security.Cryptography.X509Certificates;
 using System.IO;
+using System.Reflection.Metadata.Ecma335;
 
 public class Journal
 {
@@ -15,12 +16,19 @@ public class Journal
         
         Prompt getPrompt = new Prompt();
         string prompt = getPrompt.GetRandomPrompt();
+       
         Entry newEntry = new Entry();
         newEntry._promptText = prompt;
         newEntry._entryText = Console.ReadLine();
         newEntry._date = today;
         _entries.Add(newEntry);
-  //    Console.WriteLine("Would you like to log your mood today?");
+
+        Console.WriteLine("Which of the following best describe your mood today?");
+        Console.WriteLine("(Please select the number.)");
+        Mood myMood = new Mood();
+        string mood = myMood.DisplayMoods();
+        newEntry._moodText = mood;
+
     }
     public void DisplayAll()
     {
@@ -39,7 +47,7 @@ public class Journal
         {
             foreach (Entry entry in _entries)
             {
-                outputFile.WriteLine($"{entry._date} {entry._promptText} {entry._entryText}");
+                outputFile.WriteLine($"{entry._date}~~{entry._promptText}~~{entry._entryText}~~{entry._moodText}");
             }
         }
     }
@@ -51,7 +59,12 @@ public class Journal
         {
             foreach (string line in lines)
             {
-                string[] readList = line.Split("~~");
+                string[] variables = line.Split("~~");
+                string entryDate = variables[0];
+                string entryPrompt = variables[1];
+                string entryText = variables[2];
+                string entryMood = variables[3];
+                Console.WriteLine($"{entryDate} {entryPrompt} {entryText} {entryMood}");
             }
         }
     }
