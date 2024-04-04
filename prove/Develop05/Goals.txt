@@ -1,0 +1,2 @@
+Goal Be cool.   False
+Goal Eat tacos!   False
